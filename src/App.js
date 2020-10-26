@@ -1,8 +1,9 @@
 import './App.css';
+import { AppRouter } from './navigation/AppRouter';
 
 function App() {
   return (
-    <h1>Hola mundo</h1>
+    <AppRouter />
   );
 }
 
