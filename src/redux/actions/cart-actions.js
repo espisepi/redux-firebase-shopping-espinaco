@@ -1,4 +1,22 @@
 import cartTypes from '../types/cart-types';
+import * as productService from '../../services/product-service';
+
+
+/** Product actions -------------------------------- */
+
+export const startLoadingProducts = () => {
+  return async( dispatch ) => {
+      const products = await productService.findAll();
+      dispatch( setProducts( products ) );
+  }
+}
+
+export const setProducts = ( products ) => ({
+  type: cartTypes.productsLoad,
+  payload: products
+});
+
+/** Cart actions ----------------------------------- */
 
 export const addToCart = (itemID) => {
   return {
